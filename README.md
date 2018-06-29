@@ -1,2 +1,2 @@
-# Proyectos de desarrollo de aplicaciones web y escritorio
+Ejercicios del curso de javacript jquery de codigo facilito
 
