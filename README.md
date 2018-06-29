@@ -1,2 +1,2 @@
-Ejercicios del curso de javacript jquery de codigo facilito
+Ejercicios del curso de javacript y jquery de codigo facilito.
 
