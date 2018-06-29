@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+<script src="../jquery-1.7.2.min.js"></script>
+<script src="../jquery-color-animation.js"></script>
+
+    <style>
+    #caja1,#caja2
+    {
+      background-color: #093;
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+      margin-bottom: 80px;
+    }
+
+    </style>
+    <script>
+
+    //$(document).ready(function () {
+    $(document).on('ready', function () {
+      //estandarizar velocidad
+      //animate:anima valores numericos
+      // $("#caja1").animate({
+      //   marginBottom:0
+      // },5000,function(){
+      //     $("#caja1").animate({
+      //     marginTop:-100,
+      //     opacity:0.5
+      //     //background-color:'yellow'
+      //
+      // })
+      // })
+      //control de efectos:
+    //
+    //   var to=setTimeout('pararAnim()',2000);
+    //
+    //   $("#caja1").animate({
+    //     marginBottom:0
+    //   },5000,function(){
+    //       $("#caja1").animate({
+    //       marginTop:-100,
+    //       opacity:0.5
+    //       //background-color:'yellow'
+    //
+    //   })
+    // })
+
+      // $("#caja1").animate({
+      //   marginBottom:0
+      // },5000,function(){
+      //     $("#caja1").animate({
+      //     marginTop:-100,
+      //     opacity:0.5
+      //     //background-color:'yellow'
+      //   })
+      // })//.delay(2000).slideUp();
+
+    //guarda y regresa: delay
+      //$("#caja1").slideUp().delay(2000).slideDown();
+      //fx.off activa valores finales de animation
+      $.fx.off=true;
+      $("#caja1").animate({
+        marginBottom:0
+      },5000,function(){
+          $("#caja1").animate({
+          marginTop:-100,
+          opacity:0.5
+          //background-color:'yellow'
+        })
+      })
+      
+  });
+
+  // function pararAnim(){
+  //   //para la animacion a los dos segundos
+  //       $("#caja1").stop();
+  // }
+
+
+    </script>
+
+</head>
+
+<body>
+
+<div id="caja1">
+Andy
+</div>
+
+<div id="caja2">
+Milo
+</div>
+
+
+
+</body>
+</html>

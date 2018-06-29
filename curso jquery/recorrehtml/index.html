@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script>
+    $(document).ready(function () {
+      //recorrer elementos hmtl
+
+      //selecciuonar texto que sigue
+      //console.log($('#primero').next().text());
+      //devulve id padre
+      //var padre=$('#test').parent().attr('id');
+      //console.log($('#test').parent().text());
+      //conusltar id de hijo
+      //console.log($('#padre').children().attr('id'));
+      //siblings:permite seleccionar los quecomparte el mismo padre
+      //console.log($('#primero').siblings());
+//each: cada uno permite hacer trabajo con cada uno delos elementsos.
+$('ul li').each(function(index, elemento){
+  console.log("posicion "+index+" contiene este texto",$(elemento).text());
+
+});
+
+
+    });
+
+    </script>
+
+</head>
+
+<body>
+<header>
+</header>
+<div>
+<article id="padre">
+  Hey::D
+  <div id="test">
+    Soy hijo
+  </div>
+  </div>
+  <ul>
+    <li id="primero">Soy el primero</li>
+    <li>Soy el que sigue</li>
+    <li>soy el tercero</li>
+  </ul>
+</article>
+
+<div>
+
+
+</body>
+</html>

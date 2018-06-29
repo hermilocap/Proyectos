@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+<script src="../jquery-1.7.2.min.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+
+    <style>
+    #caja1,#ejemplo
+    {
+      background-color: #093;
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+      margin-bottom: 80px;
+    }
+
+    </style>
+    <script>
+    //http://gsgd.co.uk/sandbox/jquery/easing/
+
+    //$(document).ready(function () {
+    $(document).on('ready', function () {
+      $("#boton").on ("click", function(){
+
+      //$("#ejemplo").slideUp("fast","linear");
+
+      //("#ejemplo").slideUp("fast","easeOuBonce");
+        ("#ejemplo").slideUp('slow','easeOutBounce');
+        $(this).animate(
+          {
+            height:['+-100','easeOutBounce'];
+            width:['+=50','linear']
+          });
+
+    });
+
+    });
+    </script>
+
+</head>
+
+<body>
+
+<div id="ejemplo">
+
+</div>
+<button id="boton">Mover</button>
+</body>
+</html>

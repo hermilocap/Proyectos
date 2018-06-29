@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+<script src="../jquery-1.7.2.min.js"></script>
+    <style>
+    #caja1,#ejemplo
+    {
+      background-color: #093;
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+    }
+
+    </style>
+    <script>
+
+    //$(document).ready(function () {
+    // $(document).on('ready', function () {
+    //
+    //   var elem=$("#caja1");
+    //     $("#btn1").click(function(){
+    //       //elem.show();
+    //       //elem.slideDown()
+    //       //elem.fadeIn();
+    //       //slow mas lento
+    //       //elem.fadeIn('slow');
+    //       elem.fadeIn(5000);
+    //     })
+    //     $("#btn2").click(function(){
+    //       //elem.hide();
+    //       //elem.slideUp();
+    //       //elem.fadeOut();
+    //       //elem.slideToggle();
+    //       //elem.slideToggle();
+    //       //fast: mas rapido
+    //       //elem.fadeOut('fast');
+    //       elem.fadeOut(1000);
+    //     })
+    // });
+    //
+    //
+
+
+
+    //$(document).ready(function () {
+    $(document).on('ready', function () {
+      //estandarizar velocidad
+      $.fx.speeds.lentoo=3000;
+      $.fx.speeds.muyrapido=100;
+      $("#boton").on("click",function(){
+        //estandarizar velocidad
+        //$("#ejemplo").fadeOut("lentoo");
+        $("#ejemplo").fadeOut("lentoo",function(){
+          //$("body").append("El elemento se a borrado");
+          //elimino efecto fadeut
+          //$(this).remove();
+          //se eliminar y despues aparece rapido
+          $(this).fadeIn("muyrapido");
+        });
+      });
+
+    });
+
+    </script>
+
+</head>
+
+<body>
+<header>
+</header>
+<!--
+<div id="caja1">
+
+</div>
+
+<button   id="btn1" name="button">Mostrar</button>
+<button   id="btn2" name="button">ocultar</button> -->
+<div id="ejemplo"> </div>
+<button id="boton">Fade out</button>
+
+</body>
+</html>

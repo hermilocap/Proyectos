@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- xmlhttprequest- AJAX: permite enviar peticion a otro revisor de manera sincronica y recibir una respuesta
+    -peticion servidor:
+    -asincronica: sin recargar paginas y seguir interactuando con etiqueta cargando. esa es la funcion de ajax
+    ejemplo: obtener datos de bd sin recargar usamos AJAX.
+    CUANDO PIDA DATOS EL RESTO DEL CODIGO SGUE FUNCIONANDO: COLLBACK
+    var respuesta;
+    $.get('pagina.php', function(resp){respuesta=resp;});
+    console.log(respuesta);
+    //se utiliza callbacks
+
+   -->
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+<script src="../jquery-1.7.2.min.js"></script>
+    <style>
+    #caja1,#ejemplo
+    {
+      background-color: #093;
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+    }
+    #bien{
+      color:#093;
+    }
+    #mal{
+      color: red;
+    }
+
+    </style>
+    <script>
+
+        //$(document).ready(function () {
+        $(document).on('ready', function () {
+
+          $.getScript('')
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div id="ejemplo">
+    </div>
+
+</body>
+</html>

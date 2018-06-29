@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script>
+    $(document).ready(function () {
+
+      $('ul li').each(function(index, elemento){
+        //se añade atributo de elemento 
+        $.data(elemento,'posicion',index);
+    });
+    $('ul li').each(function(index, elemento){
+      console.log($.data(elemento,'posicion'));
+  });
+
+
+    });
+
+    </script>
+
+</head>
+
+<body>
+<header>
+
+</header>
+<ul>
+  <li>Uno</li>
+  <li>Dos</li>
+  <li>Tres</li>
+</ul>
+</body>
+</html>

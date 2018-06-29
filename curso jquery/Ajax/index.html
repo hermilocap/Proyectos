@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- xmlhttprequest- AJAX: permite enviar peticion a otro revisor de manera sincronica y recibir una respuesta
+    -peticion servidor:
+    -asincronica: sin recargar paginas y seguir interactuando con etiqueta cargando. esa es la funcion de ajax
+    ejemplo: obtener datos de bd sin recargar usamos AJAX.
+    CUANDO PIDA DATOS EL RESTO DEL CODIGO SGUE FUNCIONANDO: COLLBACK
+    var respuesta;
+    $.get('pagina.php', function(resp){respuesta=resp;});
+    console.log(respuesta);
+    //se utiliza callbacks
+
+   -->
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+<script src="../jquery-1.7.2.min.js"></script>
+    <style>
+    #caja1,#ejemplo
+    {
+      background-color: #093;
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+    }
+    #bien{
+      color:#093;
+    }
+    #mal{
+      color: red;
+    }
+
+    </style>
+    <script>
+
+
+    //$(document).ready(function () {
+    $(document).on('ready', function () {
+
+      var pet=$("#main form").attr('action');
+      var met=$("#main form").attr('method');
+      //PARA JSON MANUAL
+      //var nom,m,msj;
+    $("#main form").on('submit', function(e){
+      //detente antes de Enviar:evitar que se envie
+      e.preventDefault();
+
+      $.ajax({
+        //antes de enviar la peticion
+        beforeSend:function()
+        {
+          $("#status").html("<img src='loading.gif'>");
+          //$("#status").spin({radius:3,width:2,length:4});
+
+          //diseñor de json
+          // nom=document.fo.nombre.value;
+          // m=document.fo.mail.value;
+          // msj=document.fo.mensaje.value;
+
+        },
+        //data es para enviar
+        url:pet,
+        type:met,
+        data:$("#main form").serialize(),//convierte en objeto de json
+        //data:{nombre:nom,mail:m,mensaje:msj},//diseño de json
+        //aqui es donde se responde respuesta
+      success:function(resp){
+        //$("#status").html("<p id='bien'>Esta bien</p>");
+        //console.log(resp);
+
+        if (resp=="correcto") {
+          $("#status").html("<p id='bien'>Esta bien</p>");
+          //console.log(resp);
+        } else {
+          $("#status").html("<p id='mal'>Esta mal</p>");
+          console.log(resp);
+        }
+      },
+      error: function(jqXHR,estado,error){
+        //regresa un error
+        $("#status").html("<p id='mal'>Esta mal</p>");
+        console.log(estado);
+        console.log(error);
+      },
+      complete:function(jqXHR,estado){
+        //regresa success
+        console.log(estado);
+      },
+      timeout:10000
+      //timeout:3000
+      })
+    })
+    });
+
+    </script>
+
+</head>
+<body>
+
+  <div id="main">
+  <h1>Contacto</h1>
+  <form action="peticion.php" name="fo" method="POST">
+    <input type="text" name="nombre" placeholder="nombre">
+    <input type="email" name="mail" placeholder="correo electronico">
+    <textarea  name="mensaje" placeholder="Mensaje"></textarea>
+    <div>
+      <input type="submit" name="send" value="Enviar">
+      <div id="status"><img src="loading.gif" width="100" height="100"></div>
+    </div>
+  </form>
+  </div>
+</body>
+</html>

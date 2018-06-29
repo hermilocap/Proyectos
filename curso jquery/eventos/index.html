@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+    <script src="../jquery-1.7.2.min.js"></script>
+    <style>
+    #caja1{
+      background: #093;
+      width: 400px;
+    }
+    </style>
+    <script>
+
+
+    //$(document).ready(function () {
+    $(document).on('ready', function () {
+      //introducion a eventos:
+      //$('a').on("click", function(e){
+        //$('a').on("click", function(){
+
+        //e: olvidate de lo vas a haceer y eecuta lo que te estoy diciendo: posicion en que fue diparado
+        //e.preventDefault();//prevenir
+
+        //this: elemnto que disparo el evento
+        //console.log($(this).attr('id'));
+
+
+      //});
+      //vincular y desvincular eventodos
+      //cuando pase por encima
+      //  var cajabg;
+      // $('#caja1').mouseover( function(){
+      //
+      //  cajabg=$(this).css('background');
+      //   $(this).css('background','red')
+      //
+      // })
+      //
+      // $('#caja1').mouseout( function(){
+      //   $(this).css('background',cajabg)
+      // })
+
+   //SEGUNDA FORMA
+   // $('#caja1').on('mouseover', function(){
+   //
+   //   cajabg=$(this).css('background');
+   //   $(this).css('background','red');
+   //
+   //   $('#caja1').on('mouseout', function(){
+   //      $(this).css('background',cajabg);
+   //    });
+
+   ///tercera forma: es para 1.7 jquery
+   // v=0;//control para desvincular
+   //
+   // $('#caja1').on({
+   //   'mouseover':function(){
+   //      v++;
+   //      cajabg=$(this).css('background');
+   //      $(this).css('background','red')
+   //    },
+   //   'mouseout':function(){
+   //      $(this).css('background',cajabg)
+   //      //desvincular: despues de tres veces quitar el evento de cambiar color.
+   //      if (v >= 3) {
+   //        //of es para desvincular
+   //        $('#caja1').off('mouseover')
+   //
+   //      }
+   //    }
+   //
+   //
+   //  });
+   //
+   //  $('#caja1').on('mouseover', function(){console.log('pasate el cursor')})
+
+//cuarta opcion
+//    v=0;//control para desvincular
+// var f1=function(){console.log('pasate el cursor')};
+//
+// var f2=function(){
+//    v++;
+//    cajabg=$(this).css('background');
+//    $(this).css('background','red')
+//  };
+//
+//    $('#caja1').on({
+//      'mouseover':f2,
+//      'mouseout':function(){
+//         $(this).css('background',cajabg)
+//         //desvincular: despues de tres veces quitar el evento de cambiar color.
+//         if (v >= 3) {
+//           //of es para desvincular
+//           //por aqui tambien cuando desvincule cambie de color
+//           $('#caja1').off('mouseover',f2)
+//
+//         }
+//       }
+//
+//
+//     });
+//
+//   $('#caja1').on('mouseover',f1)
+
+//mtodo one, ejecutar unas vez
+
+$('#caja1').one('mouseover', function(){
+
+  cajabg=$(this).css('background');
+  $(this).css('background','red');
+  })
+
+  $('#caja1').on('mouseout', function(){
+     $(this).css('background',cajabg);
+   });
+
+
+    });
+
+    </script>
+
+</head>
+
+<body>
+<header>
+</header>
+
+<div id="caja1">
+ Hola
+</div>
+
+</body>
+</html>

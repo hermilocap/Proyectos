@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+<!-- <script src="../jquery-1.7.2.min.js"></script> -->
+    <style>
+
+    </style>
+    <script>
+    $(document).ready(function () {
+    //   $("#miinput").on('cambio',function(){
+    //     if (this.checked) {
+    //     $("#miinput").removeAttr('checked');
+    //     $(".cambiar").text('Encender');
+    //     }
+    //   else {
+    //     $("#miinput").attr('checked','checked');
+    //     $(".cambiar").text('Apagado');
+    //   }
+    //
+    // });
+
+    $("#miinput").on('cambio',function(ev,id){
+      console.log(id);
+      if (this.checked) {
+      $("#miinput").removeAttr('checked');
+      $(".cambiar").text('Encender');
+      }
+    else {
+      $("#miinput").attr('checked','checked');
+      $(".cambiar").text('Apagado');
+    }
+
+  });
+
+
+    $(".cambiar").on('click',function(){
+      //aqui creo el evento cambio que utilizo arriba
+      //si añadimos cooma despues de .attr('id'), podemos pasar mas parametros
+      $("#miinput").trigger('cambio',[$(this).attr('id')]);
+
+    });
+
+
+    });
+
+    </script>
+
+</head>
+
+<body>
+<header>
+</header>
+
+<input type="checkbox" id="miinput" checked="checked">
+<button  class="cambiar" id="btnuno" name="button">Apgar</button>
+<button  class="cambiar" id="btndos" name="button">Apagar</button>
+</body>
+</html>
